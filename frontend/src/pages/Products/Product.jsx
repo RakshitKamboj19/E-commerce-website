@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Loader from '../../components/Loader';
 import Message from '../../components/Message';
 import { useGetProductByIdQuery } from '../../redux/api/productApiSlice';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 import { addToFavorites, removeFromFavorites } from '../../redux/features/favorites/favoritesSlice';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import Rating from './Ratings';
 import { formatPrice } from '../../utils/currencyFormatter';
+import Rating from './Ratings';
 
 const Product = () => {
   const { id } = useParams();
